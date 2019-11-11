@@ -1,15 +1,20 @@
-import React from 'react';
-import './App.css';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Main from './components/Main';
+import {connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from './redux/action';
+import {withRouter} from 'react-router';
 
-function App() {
-  return (
-    <div className="App">
-      <Navbar/>
-      <Footer/>
-    </div>
-  );
+function mapStateToProps(state){
+    return{
+        text:state.movies.text,
+        
+    }
 }
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators(actions,dispatch);
+}
+
+const App = withRouter(connect(mapStateToProps,mapDispatchToProps)(Main));
 
 export default App;
