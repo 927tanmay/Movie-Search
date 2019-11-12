@@ -11,9 +11,12 @@ import {combineReducers} from 'redux';
          } ;
       
        case 'FETCH_MOVIES':
-            return{
+         console.log(action.payload.data)     
+       return{
                ...state,
-               movies:action.payload.data.Search,
+           
+               movies:action.payload.data,
+              
                loading:false
             } ; 
        
