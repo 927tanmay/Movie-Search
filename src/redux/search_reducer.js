@@ -14,15 +14,20 @@ import {combineReducers} from 'redux';
             return{
                ...state,
                movies:action.payload.data.Search,
-               // loading:true
+               loading:false
             } ; 
        
        case 'FETCH_MOVIE':
             return{
                ...state,
                movie:action.payload.data,
-                  // loading:true
+                  loading:false
             } ; 
+       case 'LOADING':
+               return{
+                  ...state,
+                  loading:true
+               } ;      
         
 
          

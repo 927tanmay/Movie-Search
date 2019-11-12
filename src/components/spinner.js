@@ -1,15 +1,19 @@
 import React from 'react'
+import spinner from './spinner.gif'; 
 
 
-
-function spinner() {
+function Spinner() {
     return (
         <div>
-            {/* <p>Hello</p> */}
+              <img
+        src={spinner}
+        style={{ width: '200px', margin: 'auto', display: 'block' }}
+        alt="Loading..."
+      />
         </div>
     )
 }
 
 
 
-export default spinner
+export default Spinner

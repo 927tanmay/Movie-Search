@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
+import Spinner from './spinner';
 
 export class Single extends Component {
 
     componentDidMount(){
-        this.props.fetchMovie(this.props.match.params.id)
+        this.props.fetchMovie(this.props.match.params.id);
+        this.props.setLoading();
     }
 
     render() {
         const {movie} = this.props;
-        return (
-            <div>
-                 <div className="container">
+        const {loading} = this.props;
+
+        let test = ( <div className="container">
         <div className="row">
           <div className="col-md-4 card card-body">
             <img src={movie.Poster} className="thumbnail" alt="Poster" />
@@ -50,7 +52,7 @@ export class Single extends Component {
               {movie.Plot}
               <hr />
               <a
-                href={'https://www.imdb.com/title/' + movie.imdbID}
+                href={`https://www.imdb.com/title/${movie.imdbID}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -63,7 +65,12 @@ export class Single extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div>);
+        let content = loading ? <Spinner/> : test;
+
+        return (
+            <div>
+               {content}
             </div>
         )
     }

@@ -26,6 +26,8 @@ class SearchBar extends Component{
     const movie_text= event.target.elements.searchText.value;
     if(movie_text)
     this.props.fetchMovies(movie_text);
+
+    this.props.setLoading();
   }
     render(){
          

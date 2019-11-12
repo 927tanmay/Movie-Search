@@ -27,3 +27,9 @@ export function fetchMovie(id){
         payload: request
     }
 }
+
+export function setLoading(text){
+    return {
+        type:'LOADING'
+    }
+}
