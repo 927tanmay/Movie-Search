@@ -19,13 +19,18 @@ class SearchBar extends Component{
   //   this.props.fetchMovies(movie_text);
   // }
   handleSubmit(event){
+    
     event.preventDefault();
+    
+
     const movie_text= event.target.elements.searchText.value;
     if(movie_text)
     this.props.fetchMovies(movie_text);
   }
     render(){
+         
         return(
+
             <div>
                     <div className="jumbotron jumbotron-fluid mt-5 text-center">
         <div className="container">

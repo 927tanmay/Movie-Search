@@ -7,7 +7,9 @@ import {withRouter} from 'react-router';
 function mapStateToProps(state){
     return{
         text:state.movies.text,
-        
+        loading:state.movies.loading,
+        movies:state.movies.movies,
+        movie:state.movies.movie
     }
 }
 

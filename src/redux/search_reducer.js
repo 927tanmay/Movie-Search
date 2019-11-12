@@ -2,7 +2,6 @@ import initialState from '../data/movie';
 import {combineReducers} from 'redux';
 
  function movies(state=initialState,action){
-    console.log(action.payload);
     switch(action.type){
        case 'SEARCH_MOVIE':
            return{
@@ -11,12 +10,21 @@ import {combineReducers} from 'redux';
                loading:false
          } ;
       
-       case 'FETCH_MOVIE':
-            console.log(action.payload.data.Search)
+       case 'FETCH_MOVIES':
             return{
                ...state,
-               movies:action.payload.data.Search
-            } ;    
+               movies:action.payload.data.Search,
+               // loading:true
+            } ; 
+       
+       case 'FETCH_MOVIE':
+            return{
+               ...state,
+               movie:action.payload.data,
+                  // loading:true
+            } ; 
+        
+
          
      default: return state;
     }
