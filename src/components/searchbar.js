@@ -29,13 +29,12 @@ class SearchBar extends Component{
 
     this.props.setLoading();
   }
-    render(){
-         
+    render(){  
         return(
 
-            <div>
-                    <div className="jumbotron jumbotron-fluid mt-5 text-center">
-        <div className="container">
+          <div>
+          <div className="jumbotron jumbotron-fluid mt-5 text-center">
+          <div className="container">
           <h1 className="display-4 mb-3">
             <i className="fa fa-search" /> Search for a movie ,TV series ..
           </h1>
@@ -51,11 +50,10 @@ class SearchBar extends Component{
               Search
             </button>
           </form>
-        </div>
-      </div>
-            </div>
-        )
-    }
+          </div>
+          </div>
+          </div>
+    )}
 }
 
 export default SearchBar;

@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
 import MovieCard from './MovieCard';
 export class MoviesContainer extends Component {
-    render() {
-        const {movies} =this.props;
-    
-        let content = '';
-        content = movies.Response==='True'?movies.Search.map((movie,index)=> 
-        <MovieCard key={index} movie={movie}/>): null;        
+    constructor(props)
+    {
+        super(props);
+        this.state={
+            content: ""
+        }
+    }
+    componentDidMount()
+    {
+        const {movies} =this.props; 
+        this.setState({content : movies.Response==='True'?movies.Search.map((movie,index)=> 
+        <MovieCard key={index} movie={movie}/>): null});
+    }
+    componentDidUpdate()
+    {
+        if(this.props.movies.Response==="False") window.alert("True");
+    }
+    render() {     
         return (
             <div className="row">
-                {content};
+                {this.state.content}
             </div>
         )
     }
