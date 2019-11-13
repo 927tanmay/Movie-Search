@@ -16,7 +16,7 @@ export class MoviesContainer extends Component {
     }
     componentDidUpdate()
     {
-        if(this.props.movies.Response==="False") window.alert("True");
+        if(this.props.movies.Response==="False") window.alert("No such movie exists");
     }
     render() {     
         return (
